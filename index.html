@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeffrey Barrios — Architecture Internship</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #0F1F17;
+      --cream: #EDE8DF;
+      --accent: #2E5E3E;
+      --muted: #7A8C7E;
+      --border: #C8C0B2;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--green);
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      padding: 60px 20px;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    header {
+      border-bottom: 2px solid var(--green);
+      padding-bottom: 24px;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 28px;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    header h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+    }
+
+    /* SECTIONS */
+    section {
+      margin-bottom: 36px;
+    }
+
+    .section-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+      margin-bottom: 20px;
+    }
+
+    /* SUMMARY */
+    .summary p {
+      max-width: 640px;
+      color: var(--green);
+    }
+
+    /* ENTRIES */
+    .entry {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 0 20px;
+      margin-bottom: 24px;
+    }
+
+    .entry-date {
+      font-size: 11px;
+      color: var(--muted);
+      padding-top: 2px;
+      line-height: 1.5;
+    }
+
+    .entry-content {}
+
+    .entry-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+
+    .entry-sub {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    ul.bullets {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.bullets li {
+      padding-left: 14px;
+      position: relative;
+      margin-bottom: 3px;
+      color: #3a4a3e;
+      font-size: 12px;
+    }
+
+    ul.bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 8px 20px;
+    }
+
+    .skill-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding: 5px 0;
+    }
+
+    .skill-name {
+      font-size: 12px;
+    }
+
+    .skill-level {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .skill-level.skillful { color: var(--accent); }
+    .skill-level.beginner { color: #8a7a5e; }
+    .skill-level.novice { color: var(--border); }
+
+    /* LANGUAGES + INTERESTS */
+    .inline-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+    }
+
+    .inline-item {
+      font-size: 12px;
+    }
+
+    .inline-item span {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-left: 6px;
+    }
+
+    .interests {
+      font-size: 12px;
+      color: #3a4a3e;
+    }
+
+    .interests span {
+      display: inline-block;
+      margin-right: 8px;
+      color: var(--muted);
+    }
+
+    /* PRINT */
+    @media print {
+      body { background: white; padding: 30px; }
+      .page { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <h2>Architecture Internship</h2>
+      <h1>Jeffrey Barrios</h1>
+      <div class="contact">
+        <a href="mailto:jeffreybarrios4321@gmail.com">jeffreybarrios4321@gmail.com</a>
+        <a href="https://cowboydesignstudio.co" target="_blank">cowboydesignstudio.co</a>
+        <span>(415) 272-9819</span>
+      </div>
+    </header>
+
+    <section class="summary">
+      <div class="section-label">Summary</div>
+      <p>Architecture student at the University of San Francisco with a background in architectural design, community design, and design theory. Experienced in developing conceptual designs, physical models, and digital drawings using Revit and Adobe Illustrator, with additional experience managing independent retail and e-commerce operations.</p>
+    </section>
+
+    <section>
+      <div class="section-label">Employment</div>
+
+      <div class="entry">
+        <div class="entry-date">Jan 2014 — Present</div>
+        <div class="entry-content">
+          <div class="entry-title">Independent Market Operator</div>
+          <div class="entry-sub">Self-Employed — Oakland, CA</div>
+          <ul class="bullets">
+            <li>Managed sourcing and resale of electronics, apparel, and specialty goods in a weekly open-air market</li>
+            <li>Set pricing strategies based on product demand and condition</li>
+            <li>Communicated directly with customers and handled sales transactions</li>
+            <li>Organized product displays, inventory tracking, and weekly setup logistics</li>
+            <li>Negotiated purchases and maintained consistent inventory turnover</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-date">Jan 2017 — Present</div>
+        <div class="entry-content">
+          <div class="entry-title">Independent E-Commerce Operator</div>
+          <div class="entry-sub">Self-Employed — San Francisco, CA</div>
+          <ul class="bullets">
+            <li>Managed online marketplace sales involving electronics, apparel, and specialty goods</li>
+            <li>Conducted market research to determine competitive purchase and resale pricing</li>
+            <li>Created product listings, descriptions, and images for online platforms</li>
+            <li>Coordinated order fulfillment, packaging, and shipping logistics</li>
+            <li>Responded to customer inquiries and maintained account performance</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">Education</div>
+
+      <div class="entry">
+        <div class="entry-date">Jan 2023 — Present</div>
+        <div class="entry-content">
+          <div class="entry-title">Student — Architecture</div>
+          <div class="entry-sub">University of San Francisco — San Francisco, CA</div>
+          <ul class="bullets">
+            <li>Studied architectural design principles including spatial composition, form, and structure</li>
+            <li>Completed studio work in architectural design and community-focused design projects</li>
+            <li>Studied architectural history and theory to understand historical development of the built environment</li>
+            <li>Learned basic landscape design concepts related to site planning and environmental context</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-date">Jan 2021 — Dec 2022</div>
+        <div class="entry-content">
+          <div class="entry-title">Industrial Design — Coursework</div>
+          <div class="entry-sub">San Francisco State University — San Francisco, CA</div>
+          <ul class="bullets">
+            <li>Studied industrial design concepts including product form, typography, color relationships, and visual hierarchy</li>
+            <li>Explored how design elements influence first impressions and user interaction with products</li>
+            <li>Developed conceptual product drawings and design studies</li>
+            <li>Introduced to digital drafting using AutoCAD and visual design work using Adobe Illustrator</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">Skills</div>
+      <div class="skills-grid">
+        <div class="skill-row"><span class="skill-name">Revit</span><span class="skill-level skillful">Skillful</span></div>
+        <div class="skill-row"><span class="skill-name">Architectural Design</span><span class="skill-level skillful">Skillful</span></div>
+        <div class="skill-row"><span class="skill-name">AutoCAD</span><span class="skill-level skillful">Skillful</span></div>
+        <div class="skill-row"><span class="skill-name">Physical Model Making</span><span class="skill-level skillful">Skillful</span></div>
+        <div class="skill-row"><span class="skill-name">Lumion</span><span class="skill-level skillful">Skillful</span></div>
+        <div class="skill-row"><span class="skill-name">Digital Fabrication (CNC)</span><span class="skill-level beginner">Beginner</span></div>
+        <div class="skill-row"><span class="skill-name">D5 Render</span><span class="skill-level skillful">Skillful</span></div>
+        <div class="skill-row"><span class="skill-name">Adobe Illustrator</span><span class="skill-level beginner">Beginner</span></div>
+        <div class="skill-row"><span class="skill-name">Site Analysis</span><span class="skill-level skillful">Skillful</span></div>
+        <div class="skill-row"><span class="skill-name">Archicad</span><span class="skill-level novice">Novice</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">Languages</div>
+      <div class="inline-list">
+        <div class="inline-item">English <span>Native</span></div>
+        <div class="inline-item">Spanish</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">Interests</div>
+      <p class="interests">
+        Woodworking <span>/</span> Mechanical Systems <span>/</span> Product Disassembly & Repair <span>/</span> Technical Problem Solving <span>/</span> Hands-on Fabrication
+      </p>
+    </section>
+
+  </div>
+</body>
+</html>
